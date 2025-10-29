@@ -15,7 +15,6 @@ public class Main {
         
         System.out.println("=== COMPARAÇÃO DE ALGORITMOS DE ORDENAÇÃO ===\n");
         
-        // Testar todos os algoritmos e coletar dados
         testarTodosAlgoritmos("Vetor 1 (Aleatório)", vetor1);
         System.out.println("\n" + "=".repeat(80) + "\n");
         
@@ -24,9 +23,8 @@ public class Main {
         
         testarTodosAlgoritmos("Vetor 3 (Ordem Decrescente)", vetor3);
         
-        // Gerar análise REAL baseada nos dados coletados
         System.out.println("\n\n" + "=".repeat(80));
-        System.out.println("ANÁLISE BASEADA NOS DADOS REAIS COLETADOS");
+        System.out.println("ANÁLISE BASEADA NOS DADOS COLETADOS");
         System.out.println("=".repeat(80));
         gerarAnaliseReal();
     }
@@ -75,7 +73,6 @@ public class Main {
         
         System.out.println("\n📊 RANKINGS BASEADOS NOS DADOS REAIS:\n");
         
-        // Para cada vetor, encontrar o melhor em cada categoria
         for (String vetor : vetores) {
             System.out.println("═".repeat(80));
             System.out.println(vetor.toUpperCase());
@@ -83,7 +80,6 @@ public class Main {
             
             Map<String, Metricas> dadosVetor = resultados.get(vetor);
             
-            // Ranking de Trocas
             System.out.println("\n🔄 MENOS TROCAS:");
             List<Map.Entry<String, Integer>> rankingTrocas = new ArrayList<>();
             for (String alg : algoritmos) {
@@ -95,8 +91,7 @@ public class Main {
                 System.out.printf("  %s %dº - %-25s: %5d trocas%n", 
                     medal, i+1, rankingTrocas.get(i).getKey(), rankingTrocas.get(i).getValue());
             }
-            
-            // Ranking de Iterações
+    
             System.out.println("\n🔁 MENOS ITERAÇÕES:");
             List<Map.Entry<String, Integer>> rankingIteracoes = new ArrayList<>();
             for (String alg : algoritmos) {
@@ -108,8 +103,7 @@ public class Main {
                 System.out.printf("  %s %dº - %-25s: %5d iterações%n", 
                     medal, i+1, rankingIteracoes.get(i).getKey(), rankingIteracoes.get(i).getValue());
             }
-            
-            // Ranking de Comparações
+          
             System.out.println("\n🔍 MENOS COMPARAÇÕES:");
             List<Map.Entry<String, Integer>> rankingComparacoes = new ArrayList<>();
             for (String alg : algoritmos) {
